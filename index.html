@@ -33,51 +33,13 @@
                 transform: translateX(-100%);
             }
         }
-
-        /* Animated Text Box Style with Texture */
-        .animated-text-box {
-            text-align: center;
-            background-image: url('https://www.transparenttextures.com/patterns/paper.png'); /* Light paper texture */
-            border: 2px dashed #007bff;
-            padding: 20px;
-            margin: 20px 0;
-            animation: fadeIn 1s ease-in-out;
-            border-radius: 8px;
-            color: #333; /* Text color for better contrast on texture */
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        .download-button-box {
-            margin-top: 10px;
-        }
-
-        .download-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .download-button:hover {
-            background-color: #0056b3;
-        }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
             <h1>Download Karo</h1>
+            <button class="menu-toggle">☰</button>
             <div class="nav-buttons">
                 <a href="index.html" class="nav-button">Home</a>
                 <a href="about.html" class="nav-button">About</a>
@@ -98,57 +60,41 @@
         <section class="intro">
             <h2>Welcome to Download Karo</h2>
             <p>Your one-stop solution for easy downloads.</p>
+
+            <!-- Animated Text Boxes for Downloads -->
+            <div class="download-boxes">
+                <div class="download-box">
+                    <h3>Download IoT PDF</h3>
+                    <p>Study notes for Introduction to Internet of Things.</p>
+                    <a href="https://violet-stefanie-4.tiiny.site/" class="download-button">Download</a>
+                </div>
+                <div class="download-box">
+                    <h3>Download Data Science PDF</h3>
+                    <p>Comprehensive guide on Data Science concepts.</p>
+                    <a href="https://example.com/path/to/data-science.pdf" class="download-button">Download</a>
+                </div>
+                <div class="download-box">
+                    <h3>Download AI PDF</h3>
+                    <p>Introduction to Artificial Intelligence.</p>
+                    <a href="https://example.com/path/to/ai.pdf" class="download-button">Download</a>
+                </div>
+                <div class="download-box">
+                    <h3>Download Machine Learning PDF</h3>
+                    <p>Key concepts of Machine Learning.</p>
+                    <a href="https://example.com/path/to/machine-learning.pdf" class="download-button">Download</a>
+                </div>
+                <div class="download-box">
+                    <h3>Download Cybersecurity PDF</h3>
+                    <p>Essentials of Cybersecurity practices.</p>
+                    <a href="https://example.com/path/to/cybersecurity.pdf" class="download-button">Download</a>
+                </div>
+                <div class="download-box">
+                    <h3>Download Cloud Computing PDF</h3>
+                    <p>Fundamentals of Cloud Computing.</p>
+                    <a href="https://example.com/path/to/cloud-computing.pdf" class="download-button">Download</a>
+                </div>
+            </div>
         </section>
-
-        <!-- Animated Text Boxes for Downloads -->
-        <div class="animated-text-box">
-            <h3>Download IOT PDF</h3>
-            <p>Click the button below to download the IOT PDF.</p>
-            <div class="download-button-box">
-                <a href="https://violet-stefanie-4.tiiny.site/" class="download-button" download>Download PDF</a>
-            </div>
-        </div>
-
-        <div class="animated-text-box">
-            <h3>Download Python Guide</h3>
-            <p>Click the button below to download the Python guide.</p>
-            <div class="download-button-box">
-                <a href="path/to/python-guide.pdf" class="download-button" download>Download PDF</a>
-            </div>
-        </div>
-
-        <div class="animated-text-box">
-            <h3>Download JavaScript Handbook</h3>
-            <p>Click the button below to download the JavaScript handbook.</p>
-            <div class="download-button-box">
-                <a href="path/to/javascript-handbook.pdf" class="download-button" download>Download PDF</a>
-            </div>
-        </div>
-
-        <div class="animated-text-box">
-            <h3>Download HTML & CSS Basics</h3>
-            <p>Click the button below to download the HTML & CSS basics guide.</p>
-            <div class="download-button-box">
-                <a href="path/to/html-css-basics.pdf" class="download-button" download>Download PDF</a>
-            </div>
-        </div>
-
-        <div class="animated-text-box">
-            <h3>Download React Tutorial</h3>
-            <p>Click the button below to download the React tutorial.</p>
-            <div class="download-button-box">
-                <a href="path/to/react-tutorial.pdf" class="download-button" download>Download PDF</a>
-            </div>
-        </div>
-
-        <div class="animated-text-box">
-            <h3>Download Data Science Overview</h3>
-            <p>Click the button below to download the Data Science overview.</p>
-            <div class="download-button-box">
-                <a href="path/to/data-science-overview.pdf" class="download-button" download>Download PDF</a>
-            </div>
-        </div>
-
     </main>
 
     <footer>
@@ -159,5 +105,14 @@
         </div>
         <p>&copy; 2024 Download Karo. All rights reserved.</p>
     </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navButtons = document.querySelector('.nav-buttons');
+
+        menuToggle.addEventListener('click', () => {
+            navButtons.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>

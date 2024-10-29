@@ -20,10 +20,6 @@ header {
     padding: 20px 0;
 }
 
-h1 {
-    margin: 0;
-}
-
 /* Navigation Styles */
 .nav-buttons {
     display: flex;
@@ -39,7 +35,11 @@ h1 {
     padding: 8px 16px;
 }
 
+/* Hamburger Menu Styles */
 .menu-toggle {
+    font-size: 24px; /* Hamburger icon size */
+    color: white; /* Hamburger icon color */
+    cursor: pointer; /* Cursor pointer for hover effect */
     display: none; /* Hide toggle button on larger screens */
 }
 
@@ -98,8 +98,17 @@ main {
 footer {
     text-align: center;
     padding: 20px 0;
-    background: #333;
-    color: white;
+    background: #333; /* Dark background for the footer */
+    color: white; /* White text color for the footer */
+}
+
+.footer-links a {
+    color: white; /* Set footer link color to white */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.footer-links a:hover {
+    text-decoration: underline; /* Add underline on hover */
 }
 
 /* Responsive Styles */
@@ -119,7 +128,23 @@ footer {
         display: block; /* Show toggle button on mobile */
     }
 
-    .nav-buttons.active {
-        display: flex; /* Show when active */
+    .nav-links {
+        display: none; /* Hide links by default */
+        flex-direction: column; /* Stack the links vertically */
+        width: 100%; /* Full width for links */
+        background: #333; /* Background color for dropdown */
+        position: absolute; /* Positioning for dropdown */
+        top: 60px; /* Position below header */
+        left: 0; /* Align to the left */
+        z-index: 10; /* Ensure it’s on top */
+    }
+
+    .nav-links.active {
+        display: flex; /* Show links when active */
+    }
+
+    .nav-links a {
+        padding: 10px; /* Padding for links */
+        border-bottom: 1px solid #444; /* Divider between links */
     }
 }

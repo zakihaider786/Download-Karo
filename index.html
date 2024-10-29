@@ -39,13 +39,15 @@
     <header>
         <div class="container">
             <h1>Download Karo</h1>
-            <button class="menu-toggle">☰</button>
             <div class="nav-buttons">
-                <a href="index.html" class="nav-button">Home</a>
-                <a href="about.html" class="nav-button">About</a>
-                <a href="privacy.html" class="nav-button">Privacy Policy</a>
-                <a href="terms.html" class="nav-button">Terms and Conditions</a>
-                <a href="disclaimer.html" class="nav-button">Disclaimer</a>
+                <a href="#" class="menu-toggle" id="menuToggle">&#9776;</a> <!-- Hamburger Menu Icon -->
+                <div id="navMenu" class="nav-links">
+                    <a href="index.html" class="nav-button">Home</a>
+                    <a href="about.html" class="nav-button">About</a>
+                    <a href="privacy.html" class="nav-button">Privacy Policy</a>
+                    <a href="terms.html" class="nav-button">Terms and Conditions</a>
+                    <a href="disclaimer.html" class="nav-button">Disclaimer</a>
+                </div>
             </div>
             <a href="#" class="download-button">Download</a>
         </div>
@@ -60,38 +62,47 @@
         <section class="intro">
             <h2>Welcome to Download Karo</h2>
             <p>Your one-stop solution for easy downloads.</p>
-
-            <!-- Animated Text Boxes for Downloads -->
             <div class="download-boxes">
+                <!-- Example Download Boxes -->
                 <div class="download-box">
-                    <h3>Download IoT PDF</h3>
-                    <p>Study notes for Introduction to Internet of Things.</p>
-                    <a href="https://violet-stefanie-4.tiiny.site/" class="download-button">Download</a>
+                    <h3>Download IoT PDF 1</h3>
+                    <a href="your_pdf_link_here_1.pdf" class="download-button">Download</a>
                 </div>
                 <div class="download-box">
-                    <h3>Download Data Science PDF</h3>
-                    <p>Comprehensive guide on Data Science concepts.</p>
-                    <a href="https://example.com/path/to/data-science.pdf" class="download-button">Download</a>
+                    <h3>Download IoT PDF 2</h3>
+                    <a href="your_pdf_link_here_2.pdf" class="download-button">Download</a>
                 </div>
                 <div class="download-box">
-                    <h3>Download AI PDF</h3>
-                    <p>Introduction to Artificial Intelligence.</p>
-                    <a href="https://example.com/path/to/ai.pdf" class="download-button">Download</a>
+                    <h3>Download IoT PDF 3</h3>
+                    <a href="your_pdf_link_here_3.pdf" class="download-button">Download</a>
                 </div>
                 <div class="download-box">
-                    <h3>Download Machine Learning PDF</h3>
-                    <p>Key concepts of Machine Learning.</p>
-                    <a href="https://example.com/path/to/machine-learning.pdf" class="download-button">Download</a>
+                    <h3>Download IoT PDF 4</h3>
+                    <a href="your_pdf_link_here_4.pdf" class="download-button">Download</a>
                 </div>
                 <div class="download-box">
-                    <h3>Download Cybersecurity PDF</h3>
-                    <p>Essentials of Cybersecurity practices.</p>
-                    <a href="https://example.com/path/to/cybersecurity.pdf" class="download-button">Download</a>
+                    <h3>Download IoT PDF 5</h3>
+                    <a href="your_pdf_link_here_5.pdf" class="download-button">Download</a>
                 </div>
                 <div class="download-box">
-                    <h3>Download Cloud Computing PDF</h3>
-                    <p>Fundamentals of Cloud Computing.</p>
-                    <a href="https://example.com/path/to/cloud-computing.pdf" class="download-button">Download</a>
+                    <h3>Download IoT PDF 6</h3>
+                    <a href="your_pdf_link_here_6.pdf" class="download-button">Download</a>
+                </div>
+                <div class="download-box">
+                    <h3>Download IoT PDF 7</h3>
+                    <a href="your_pdf_link_here_7.pdf" class="download-button">Download</a>
+                </div>
+                <div class="download-box">
+                    <h3>Download IoT PDF 8</h3>
+                    <a href="your_pdf_link_here_8.pdf" class="download-button">Download</a>
+                </div>
+                <div class="download-box">
+                    <h3>Download IoT PDF 9</h3>
+                    <a href="your_pdf_link_here_9.pdf" class="download-button">Download</a>
+                </div>
+                <div class="download-box">
+                    <h3>Download IoT PDF 10</h3>
+                    <a href="your_pdf_link_here_10.pdf" class="download-button">Download</a>
                 </div>
             </div>
         </section>
@@ -107,11 +118,10 @@
     </footer>
 
     <script>
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navButtons = document.querySelector('.nav-buttons');
-
-        menuToggle.addEventListener('click', () => {
-            navButtons.classList.toggle('active');
+        // JavaScript to toggle the menu on mobile
+        document.getElementById("menuToggle").addEventListener("click", function() {
+            var navMenu = document.getElementById("navMenu");
+            navMenu.classList.toggle("active");
         });
     </script>
 </body>

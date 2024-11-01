@@ -60,6 +60,37 @@
                 transform: translateX(-100%);
             }
         }
+    * Dropdown Menu Styling */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            z-index: 1;
+            border: 1px solid #ffcc00;
+            margin-top: 10px;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #575757;
+        }
+
+        /* Show dropdown on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -74,7 +105,20 @@
                     <a href="privacy.html" class="nav-button">Privacy Policy</a>
                     <a href="terms.html" class="nav-button">Terms and Conditions</a>
                     <a href="disclaimer.html" class="nav-button">Disclaimer</a>
-                    <a href="test.html" class="nav-button">Test</a>
+
+                    <!-- Test Tab with Dropdown -->
+                    <div class="dropdown">
+                        <a href="test.html" class="nav-button">Test</a>
+                        <div class="dropdown-content">
+                            <a href="iot-chapter1.html">IOT Chapter 1</a>
+                            <a href="iot-chapter2.html">IOT Chapter 2</a>
+                            <a href="iot-chapter3.html">IOT Chapter 3</a>
+                            <a href="iot-chapter4.html">IOT Chapter 4</a>
+                            <a href="iot-chapter5.html">IOT Chapter 5</a>
+                            <a href="iot-chapter6.html">IOT Chapter 6</a>
+                            <a href="iot-full-revision.html">Full Revision</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <a href="#" class="download-button">Download</a>

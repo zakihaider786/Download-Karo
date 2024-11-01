@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /private-page/ <!-- Replace with any specific pages you want to block from indexing -->
+Allow: /
+
+Sitemap: https://yourwebsite.com/sitemap.xml <!-- Adjust URL to your sitemap -->

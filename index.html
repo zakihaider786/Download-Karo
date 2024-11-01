@@ -51,12 +51,7 @@
             background: #333;
             color: #fff;
             padding: 10px 20px;
-        }
-
-        .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            position: relative;
         }
 
         h1 {
@@ -73,6 +68,7 @@
             flex-direction: row;
             justify-content: flex-start;
             list-style: none;
+            margin-left: auto; /* Align links to the right */
         }
 
         .nav-button {
@@ -80,6 +76,7 @@
             text-decoration: none;
             color: #fff;
             transition: background-color 0.3s;
+            position: relative; /* For dropdown positioning */
         }
 
         .nav-button:hover {
@@ -159,53 +156,12 @@
             padding: 20px;
         }
 
-        .download-boxes {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-
-        .download-box {
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 20px;
-            margin: 10px;
-            width: calc(33.333% - 20px);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .download-box:hover {
-            transform: scale(1.05);
-        }
-
-        .download-button {
-            display: inline-block;
-            padding: 10px 15px;
-            background: #333;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .download-button:hover {
-            background: #444;
-        }
-
         /* Footer Styles */
         footer {
             background: #333;
             color: #fff;
             text-align: center;
             padding: 20px;
-        }
-
-        .footer-links a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 10px;
         }
 
         /* Responsive Styles */
@@ -225,9 +181,6 @@
             .menu-toggle {
                 display: block; /* Show the toggle button */
             }
-            .download-box {
-                width: calc(100% - 20px); /* Full width for mobile boxes */
-            }
         }
     </style>
 </head>
@@ -244,7 +197,7 @@
                     <a href="terms.html" class="nav-button">Terms and Conditions</a>
                     <a href="disclaimer.html" class="nav-button">Disclaimer</a>
                     <div class="dropdown">
-                        <a href="test.html" class="nav-button">Test</a>
+                        <a href="#" class="nav-button">Test</a>
                         <div class="dropdown-content">
                             <a href="#">IOT Chapter 1</a>
                             <a href="#">IOT Chapter 2</a>
@@ -270,42 +223,11 @@
         <section class="intro">
             <h2>Welcome to Download Karo</h2>
             <p>Your one-stop solution for easy downloads.</p>
-            <div class="download-boxes">
-                <div class="download-box">
-                    <h3>Download IoT PDF</h3>
-                    <a href="https://violet-stefanie-4.tiiny.site/" class="download-button">Download</a>
-                </div>
-                <div class="download-box">
-                    <h3>Download Web Design PDF</h3>
-                    <a href="https://violet-stefanie-4.tiiny.site/" class="download-button">Download</a>
-                </div>
-                <div class="download-box">
-                    <h3>Download Python PDF</h3>
-                    <a href="https://violet-stefanie-4.tiiny.site/" class="download-button">Download</a>
-                </div>
-                <div class="download-box">
-                    <h3>Download IT Tools PDF</h3>
-                    <a href="https://violet-stefanie-4.tiiny.site/" class="download-button">Download</a>
-                </div>
-                <div class="download-box">
-                    <h3>Download Networking PDF</h3>
-                    <a href="https://violet-stefanie-4.tiiny.site/" class="download-button">Download</a>
-                </div>
-                <div class="download-box">
-                    <h3>Download Security PDF</h3>
-                    <a href="https://violet-stefanie-4.tiiny.site/" class="download-button">Download</a>
-                </div>
-            </div>
+            <!-- Additional content can go here -->
         </section>
     </main>
 
     <footer>
-        <div class="footer-links">
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="contact.html">Contact Us</a>
-            <a href="disclaimer.html">Disclaimer</a>
-            <a href="terms.html">Terms and Conditions</a>
-        </div>
         <p>&copy; 2024 Download Karo. All rights reserved.</p>
     </footer>
 

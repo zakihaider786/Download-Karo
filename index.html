@@ -33,7 +33,98 @@
     </script>
     
     <style>
-        /* Optimized Marquee Style */
+        /* General Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            list-style: none;
+        }
+
+        .nav-button {
+            padding: 15px;
+            text-decoration: none;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+
+        .nav-button:hover {
+            background-color: #444;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .menu-toggle {
+            display: none; /* Hidden by default, shown in mobile */
+            font-size: 24px;
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* Marquee Style */
         .marquee {
             width: 100%;
             overflow: hidden;
@@ -48,10 +139,12 @@
             border-bottom: 3px solid #ffcc00;
             text-shadow: 1px 1px #000;
         }
+        
         .marquee span {
             display: inline-block;
             animation: marquee 15s linear infinite;
         }
+        
         @keyframes marquee {
             from {
                 transform: translateX(100%);
@@ -60,36 +153,81 @@
                 transform: translateX(-100%);
             }
         }
-    * Dropdown Menu Styling */
-        .dropdown {
-            position: relative;
+
+        /* Main Section */
+        main {
+            padding: 20px;
+        }
+
+        .download-boxes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .download-box {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 10px;
+            width: calc(33.333% - 20px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .download-box:hover {
+            transform: scale(1.05);
+        }
+
+        .download-button {
             display: inline-block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #333;
-            min-width: 160px;
-            z-index: 1;
-            border: 1px solid #ffcc00;
-            margin-top: 10px;
-        }
-
-        .dropdown-content a {
-            color: white;
-            padding: 12px 16px;
+            padding: 10px 15px;
+            background: #333;
+            color: #fff;
             text-decoration: none;
-            display: block;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
 
-        .dropdown-content a:hover {
-            background-color: #575757;
+        .download-button:hover {
+            background: #444;
         }
 
-        /* Show dropdown on hover */
-        .dropdown:hover .dropdown-content {
-            display: block;
+        /* Footer Styles */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Hide links by default on mobile */
+                flex-direction: column; /* Stack links vertically */
+                width: 100%; /* Full width for mobile */
+                background: #333; /* Match background color */
+                position: absolute; /* Position absolute for dropdown */
+                top: 50px; /* Adjust based on header height */
+                left: 0;
+            }
+            .nav-links.active {
+                display: flex; /* Show links when active */
+            }
+            .menu-toggle {
+                display: block; /* Show the toggle button */
+            }
+            .download-box {
+                width: calc(100% - 20px); /* Full width for mobile boxes */
+            }
         }
     </style>
 </head>
@@ -98,25 +236,23 @@
         <div class="container">
             <h1>Download Karo</h1>
             <div class="nav-buttons">
-                <a href="#" class="menu-toggle" id="menuToggle">&#9776;</a> <!-- Hamburger Menu Icon -->
+                <button class="menu-toggle" id="menuToggle">&#9776;</button> <!-- Hamburger Menu Icon -->
                 <div id="navMenu" class="nav-links">
                     <a href="index.html" class="nav-button">Home</a>
                     <a href="about.html" class="nav-button">About</a>
                     <a href="privacy.html" class="nav-button">Privacy Policy</a>
                     <a href="terms.html" class="nav-button">Terms and Conditions</a>
                     <a href="disclaimer.html" class="nav-button">Disclaimer</a>
-
-                    <!-- Test Tab with Dropdown -->
                     <div class="dropdown">
                         <a href="test.html" class="nav-button">Test</a>
                         <div class="dropdown-content">
-                            <a href="iot-chapter1.html">IOT Chapter 1</a>
-                            <a href="iot-chapter2.html">IOT Chapter 2</a>
-                            <a href="iot-chapter3.html">IOT Chapter 3</a>
-                            <a href="iot-chapter4.html">IOT Chapter 4</a>
-                            <a href="iot-chapter5.html">IOT Chapter 5</a>
-                            <a href="iot-chapter6.html">IOT Chapter 6</a>
-                            <a href="iot-full-revision.html">Full Revision</a>
+                            <a href="#">IOT Chapter 1</a>
+                            <a href="#">IOT Chapter 2</a>
+                            <a href="#">IOT Chapter 3</a>
+                            <a href="#">IOT Chapter 4</a>
+                            <a href="#">IOT Chapter 5</a>
+                            <a href="#">IOT Chapter 6</a>
+                            <a href="#">Full Revision</a>
                         </div>
                     </div>
                 </div>
@@ -135,30 +271,29 @@
             <h2>Welcome to Download Karo</h2>
             <p>Your one-stop solution for easy downloads.</p>
             <div class="download-boxes">
-                <!-- Updated Download Boxes -->
                 <div class="download-box">
                     <h3>Download IoT PDF</h3>
                     <a href="https://violet-stefanie-4.tiiny.site/" class="download-button">Download</a>
                 </div>
                 <div class="download-box">
-                    <h3>Download IT Tools and Networking PDF</h3>
-                    <a href="your_pdf_link_here_2.pdf" class="download-button">Download</a>
+                    <h3>Download Web Design PDF</h3>
+                    <a href="https://violet-stefanie-4.tiiny.site/" class="download-button">Download</a>
                 </div>
                 <div class="download-box">
                     <h3>Download Python PDF</h3>
-                    <a href="your_pdf_link_here_3.pdf" class="download-button">Download</a>
+                    <a href="https://violet-stefanie-4.tiiny.site/" class="download-button">Download</a>
                 </div>
                 <div class="download-box">
-                    <h3>Download Web Designing PDF</h3>
-                    <a href="your_pdf_link_here_4.pdf" class="download-button">Download</a>
+                    <h3>Download IT Tools PDF</h3>
+                    <a href="https://violet-stefanie-4.tiiny.site/" class="download-button">Download</a>
                 </div>
                 <div class="download-box">
-                    <h3>Download CCC Book PDF</h3>
-                    <a href="your_pdf_link_here_5.pdf" class="download-button">Download</a>
+                    <h3>Download Networking PDF</h3>
+                    <a href="https://violet-stefanie-4.tiiny.site/" class="download-button">Download</a>
                 </div>
                 <div class="download-box">
-                    <h3>Download O Level Book PDF</h3>
-                    <a href="your_pdf_link_here_6.pdf" class="download-button">Download</a>
+                    <h3>Download Security PDF</h3>
+                    <a href="https://violet-stefanie-4.tiiny.site/" class="download-button">Download</a>
                 </div>
             </div>
         </section>
@@ -166,15 +301,16 @@
 
     <footer>
         <div class="footer-links">
-            <a href="privacy.html">Privacy Policy</a> | 
-            <a href="disclaimer.html">Disclaimer</a> | 
+            <a href="privacy.html">Privacy Policy</a>
             <a href="contact.html">Contact Us</a>
+            <a href="disclaimer.html">Disclaimer</a>
+            <a href="terms.html">Terms and Conditions</a>
         </div>
         <p>&copy; 2024 Download Karo. All rights reserved.</p>
     </footer>
 
     <script>
-        // JavaScript to toggle the menu on mobile
+        // Mobile Menu Toggle
         document.getElementById("menuToggle").addEventListener("click", function() {
             var navMenu = document.getElementById("navMenu");
             navMenu.classList.toggle("active");
